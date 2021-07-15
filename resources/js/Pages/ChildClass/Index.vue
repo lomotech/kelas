@@ -3,14 +3,12 @@
     <app-layout>
         <div
             class="mt-8 max-w-3xl mx-auto sm:px-6 lg:max-w-7xl">
-            <a :href="route('children.create')"
-               class="inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4
-                font-medium rounded-md shadow-sm text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2
-                focus:ring-offset-2 focus:ring-indigo-500 mb-4">
+            <button type="button" class="inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4
+            font-medium rounded-md shadow-sm text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2
+            focus:ring-offset-2 focus:ring-indigo-500 mb-4">
                 <PlusIcon class="h-5 w-5" aria-hidden="true"/>
-                <span>Add New</span>
-                <span class="hidden md:inline">Children</span>
-            </a>
+                Add new child
+            </button>
             <div class="bg-white shadow overflow-hidden sm:rounded-md">
                 <ul class="divide-y divide-gray-200">
                     <li v-for="application in applications" :key="application.applicant.email">
@@ -108,7 +106,7 @@ export default {
         CheckCircleIcon,
         ChevronRightIcon,
         MailIcon,
-        PlusIcon
+        PlusIcon,
     },
     setup() {
         return {

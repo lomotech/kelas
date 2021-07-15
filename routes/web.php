@@ -28,4 +28,6 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return Inertia::render('Dashboard');
 })->name('dashboard');
 
-Route::get('children', [\App\Http\Controllers\ChildController::class, 'index'])->name('children.index');
+Route::middleware(['auth:sanctum', 'verified'])->group(function(){
+    Route::resource('children', \App\Http\Controllers\ChildController::class);
+});
